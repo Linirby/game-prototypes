@@ -1,5 +1,5 @@
 import pygame
-from timer import Timer
+from src.timer import Timer
 
 class Game:
 
@@ -18,6 +18,9 @@ class Game:
     def handle_events(self, event: pygame.event.Event) -> None:
         if (event.type == pygame.QUIT):
             self.running = False
+        if (event.type == pygame.KEYDOWN):
+            if (event.key == pygame.K_q):
+                self.running = False
 
     def update(self, fixed_dt: float) -> None:
         pass
